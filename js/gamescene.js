@@ -1,5 +1,6 @@
 import {firebaseManager} from "./index.js";
 import Map from "./map.js";
+import CameraController from "./cameracontroller.js";
 
 export default class GameScene extends Phaser.Scene {
     preload() {
@@ -17,6 +18,8 @@ export default class GameScene extends Phaser.Scene {
         .setScrollFactor(0);
 
         this.createMap();
+        this.createInput();
+        this.createCamera();
     }
 
     createMap() {
@@ -24,6 +27,16 @@ export default class GameScene extends Phaser.Scene {
         this.map = new Map(this, 10, 10);
     }
 
+    createInput() {
+        this.cursors = this.input.keyboard.createCursorKeys();
+    }
+
+    createCamera() {
+        var camera = this.cameras.main;
+        this.cameraController = new CameraController(this, camera, this.cursors);
+    }
+
     update(time, delta) {
+        this.cameraController.update(delta);
     }
 }

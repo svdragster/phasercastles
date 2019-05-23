@@ -9,7 +9,7 @@ const config = {
   pixelArt: true,
   backgroundColor: "#1d212d",
   scene: GameScene,
-  //pixelArt: true,
+  pixelArt: true,
   physics: {
     default: "arcade",
   }
