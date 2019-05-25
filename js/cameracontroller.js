@@ -4,10 +4,10 @@ export default class CameraController {
         let config = {
             camera: camera,
 
-            left: cursors.left,    // { isDown, isUp }
-            right: cursors.right,  // { isDown, isUp }
-            up: cursors.up,        // { isDown, isUp }
-            down: cursors.down,    // { isDown, isUp }
+            left: scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A),    // { isDown, isUp }
+            right: scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D),  // { isDown, isUp }
+            up: scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W),        // { isDown, isUp }
+            down: scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S),    // { isDown, isUp }
             zoomIn: scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Q),          // { isDown, isUp }
             zoomOut: scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E),         // { isDown, isUp }
 
