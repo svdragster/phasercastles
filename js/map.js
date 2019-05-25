@@ -32,8 +32,8 @@ export default class Map {
     }
 
     createTile(arrayX, arrayY) {
-        var width  = 25;
-        var height = 25;
+        var width  = 35;
+        var height = 35;
         var x = this.arrayXtoScreenX(arrayX, width);
         var y = this.arrayYtoScreenY(arrayY, height);
         let tile = new Tile(this.scene, x, y, width, height);

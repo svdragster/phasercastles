@@ -8,10 +8,26 @@ export default class Tile extends Phaser.GameObjects.Zone {
 
         this.setInteractive();
 
-        var graphics = this.scene.graphics;
-        graphics.lineStyle(2, 0xFF8888 + Math.random() * 0x005555);
-        graphics.strokeRect(this.x - this.input.hitArea.width / 2, this.y - this.input.hitArea.height / 2, this.input.hitArea.width, this.input.hitArea.height);
+        this.draw();
 
         this.structure = new Structure(scene, x, y, "castle")
+    }
+
+    setOwner(player) {
+        this.owner = player;
+    }
+
+    getOwner() {
+        return this.owner;
+    }
+
+    draw() {
+        var graphics = this.scene.graphics;
+        graphics.lineStyle(3, 0xFFFFFF);
+        graphics.fillStyle(0x777777, 1.0);
+        graphics.fillRect(this.x - this.input.hitArea.width / 2, this.y - this.input.hitArea.height / 2, this.input.hitArea.width, this.input.hitArea.height);
+        graphics.strokeRect(this.x - this.input.hitArea.width / 2, this.y - this.input.hitArea.height / 2, this.input.hitArea.width, this.input.hitArea.height);
+
+
     }
 }
