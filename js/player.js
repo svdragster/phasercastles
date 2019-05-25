@@ -6,4 +6,8 @@ export default class Player {
         this.color = color;
     }
 
+    getColor() {
+        return this.color;
+    }
+
 }
